@@ -27,5 +27,29 @@ while True:
         else:
             print("\nIncorrect credentials. Try again")
             
+print ("Welcome to RemindRx!")
+
+print("Enter your firstname: ")
+firstname=input()
+print("Enter your lastname: ")
+lastname=input()
+fullname=(firstname  + " " + lastname )
+
+print(fullname)
+
+print("Enter name of medication :")
+medication_name=input()
+
+print(medication_name)
+
+print("Enter the directions for medication : ")
+med_direction = input()
+
+print(med_direction)
+
+print("Enter time of day medication is to be taken : ") #need input format for the time so end user will know how to enter it!
+time_take=input()
+print(time_take)
+
 
 
