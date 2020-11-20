@@ -4,8 +4,8 @@ import time
 import os
 import webbrowser
 
-# Since this is patient information, you must log into the application
-print("You must enter your username and password to access the application\n You have 3 attempts or application quits")
+# Log into the app
+print("Please enter your username and password to access the application\n You have 3 attempts or application quits")
 
 attempts = 0
 
