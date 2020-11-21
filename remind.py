@@ -50,6 +50,8 @@ print(med_direction)
 print("Enter time of day medication is to be taken : ") #need input format for the time so end user will know how to enter it!
 time_take=input()
 print(time_take)
+print(time_take,med_direction)
+
 
 
 
