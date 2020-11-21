@@ -18,7 +18,7 @@ while True:
     userp = input("Enter Password: ")
     attempts += 1
     if attempts == 3:
-        print("Too many incorrect attempts. Goodbye")
+        print("Too many incorrect attempts. Please try again in few minutes")
         exit()
     else:
         if usern == username and userp == password:
@@ -29,15 +29,15 @@ while True:
             
 print ("Welcome to RemindRx!")
 
-print("Enter your firstname: ")
-firstname=input()
-print("Enter your lastname: ")
-lastname=input()
-fullname=(firstname  + " " + lastname )
+print("Enter your first name: ")
+first_name=input()
+print("Enter your last name: ")
+last_name=input()
+full_name=(first_name  + " " + last_name )
 
-print(fullname)
+print(full_name)
 
-print("Enter name of medication :")
+print("Hello", first_name,"!", "Enter name of medication :")
 medication_name=input()
 
 print(medication_name)
