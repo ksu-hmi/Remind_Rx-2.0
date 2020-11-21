@@ -1,21 +1,21 @@
 import onelogin
-# specify client_id, client_secret, and shard (us or eu)
-creds = {'client_id':'',
-     'client_secret':'',
+# specify user_name, user_secret, and shard (us or eu)
+Remind_log = {'client_id':'',
+     'user_secret':'',
      'shard':'US'}
 
-token = onelogin.Token(**creds)
+token = onelogin.Token(**Remind_log)
 # Create the user object with the token created
 user = onelogin.User(token)
 
 # define the user, or build the user object from a csv file,
-# To create a user you must include the firstname, lastname, email, and username
+# To create a user, include the firstname, lastname, email, and username
 # attribute.
 new_user = {
-    'firstname':'Foo',
-    'lastname':'Bar',
-    'email':'foobarfoobar@foobarz123.local',
-    'username':'foobar12321'
+    'firstname':'Victoria',
+    'lastname':'Wade',
+    'email':'victoria.wade@gmail.local',
+    'username':'victoria001'
 }
 
 # Search to see if the user exists based on email, if not, create a new user
