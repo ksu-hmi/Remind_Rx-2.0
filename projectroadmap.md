@@ -8,7 +8,8 @@
 
 
 # Make changes to commit as needed.
-- [ ] Allow patient to add prescription information including date of recent fill
+- [x] Patient can create profile on remindrx
+- [x] Allow patient to add prescription information including directions
 - [ ] Link alarm to prescription schedule
 - [ ] Set remider for seasonal allergies and tips to help reduce them
 - [ ] Finalize project.
