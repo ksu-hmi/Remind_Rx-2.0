@@ -7,30 +7,67 @@ import signal
 import os
 import webbrowser
 import time
+import re
 
 
 # Log into the app
-print ("RemindRx")
+print ("RemindRx, your guide to better health")
 
-print("Enter Email address: ")
-create_username=input()
-print("Create Password: ")
-create_password=input()
+print("Enter Email address(Username): ")
+email_address = input()
+while "@" not in email_address:
+    email_address = input("Your email address must have '@' in it\nPlease write your email address again: ")
+    if len(email_address) <= 6 :
+        email_address = input("Your email address is too short\nPlease write your email address again: ")
+    if "." not in email_address:
+        email_address = input("Your email address must have '.' in it\nPlease write your email address again: ")
+while "." not in email_address:
+    email_address = input("Your email address must have '.' in it\nPlease write your email address again: ")
+    if len(email_address) <= 6 :
+        email_address = input("Your email address is too short\nPlease write your email address again: ")
+    if "@" not in email_address:
+        email_address = input("Your email address must have '@' in it\nPlease write your email address again: ")
+
+# Create password
+def checkPassword(password):
+    """
+    Validate the password
+    """
+    if len(password) < 8:
+        # Password to short
+        print("Your password must be 8 characters long.")
+        return False
+    elif not re.findall(r'\d+', password):
+        # Missing a number
+        print("You need a number in your password.")
+        return False
+    elif not re.findall(r'[A-Z]+', password):
+        # Missing at least one capital letter
+        print("You need a capital letter in your password.")
+        return False
+    else:
+        # All good
+        print("All good")
+        return True
+
+# Promt user to enter valid password
+passwordValid = False
+while not passwordValid:
+    create_password = input( "Create your password:\n (Password must contain at least 8 characters, one number,\n one capital letter, and one lowercase letter)")
+    passwordValid = checkPassword(create_password)
+
 print("Enter your first name: ")
 first_name=input()
 print("Enter your last name: ")
 last_name=input()
-print("Enter your phone number: ")
-phone_number=input()
-full_name=(first_name  + " " + last_name )
 
-
+#Now log in with new password
 print("Welcome", first_name + "!", "Your profile is set up")
 print("Log in to access the application\n You have 3 attempts or application quits")
 
 attempts = 0
 
-username = create_username
+username = email_address
 password = create_password
 
 while True:
@@ -72,13 +109,11 @@ medication_name=[]
 
 while choice != 5:
     if choice == 1:
-        print ("Add A Medication")
         med_add = input("Enter the medication Name to add to your list: ")
         medication_name.append(med_add)
         print("Updated Medication List: ", medication_name) 
-        print("Enter the directions for medication : ")
         med_direction = input()
-        
+        break
     elif choice == 2:
         print ("Delete A Medication")
         med_remove = input("Enter the medication that you are removing from your list: ")   
@@ -88,15 +123,13 @@ while choice != 5:
     elif choice == 3:
         print ("Review Your Medication List")
         print("Current medication list: ", "\n", medication_name)
-        
+        break
     elif choice == 4:
         print ("Set an Alarm for Medication")
 
         alarm_HH = input("Enter the hour you want to take the medication - in 24 hour format: ")
         alarm_MM = input("Enter the minute you want to take the medication: ")
 
-print("Hello", first_name,"!", "Enter name of medication :")
-medication_name=input()
 
 print(medication_name)
 
