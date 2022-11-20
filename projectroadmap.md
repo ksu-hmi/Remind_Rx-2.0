@@ -14,3 +14,12 @@
 - [ ] Set remider for seasonal allergies and tips to help reduce them
 - [ ] Finalize project.
 - [ ] create final presentation
+........................................................................
+NEW PROJECT ROADMAP:
+
+- [ ] Refine existing code
+- [ ] setup a reminder function to take medications
+- [ ] create a "schedule with provider" feature
+- [ ] debug and edit the program
+- [ ] Finalize project.
+- [ ] create a powerpoint presentation detaling the changes made
